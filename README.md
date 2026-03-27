@@ -50,7 +50,7 @@ A List of the all the variables is listed below with an explaination of what the
 **Total_Ct_Chng_Q4_Q1** - Change in transaction count from Q1 to Q4
 
 # PowerBI Dashboard
-The link to the Stroke Predictions Dashboard can be found here
+The link to the Stroke Predictions Dashboard can be found [here](https://app.powerbi.com/groups/me/reports/201c3c20-d4f5-4ad2-a4cf-85f793f579cd/a7838fd6db23880af7fa?experience=power-bi)
 
 # Project Plan
 * Load and Clean data: Removing outliers, encoding categorical data, identifying and dealing with missing or duplicated values
