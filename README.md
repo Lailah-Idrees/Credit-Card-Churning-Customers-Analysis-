@@ -1,72 +1,94 @@
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-## Template Instructions
+# Credit Card Churn Predictions Analysis 
+Bank Churners Dataset Analysis is a comprehensive data analysis tool designed to streamline data exploration, analysis, visualisation and machine learning. The tool supports multiple data formats and provides an intuitive interface for both novice and expert data scientists.
 
-Welcome,
+# Dataset Content #
+This dataset contains Credit Card Churn for individuals at a bank, along with key behavioural and demographic attributes. The dataset consists of 10127 rows and 20 columns. Three columns were removed as they were deemed not neccessary for analysis these are: Client number and two Naive bayes Clasifier columns.
+The Data was sourced from Kaggle link [here](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers)
 
-This is the Code Institute student template for the Data Analytics capstone project. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+A List of the all the variables is listed below with an explaination of what they show:
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+# Target
 
-## How to use this repo
+**Attrition_Flag** - Indication of a customer leaving or staying on the credit card services
 
-1. Use this template to create your GitHub project repo. Click the **Use this template** button, then click **Create a new repository**.
+# Features
 
-1. Copy the URL of your repository to your clipboard.
+**Customer Age**
 
-1. In VS Code, select **File** -> **Open Folder**.
+**Gender**
 
-1. Select your `vscode-projects` folder, then click the **Select Folder** button on Windows, or the **Open** button on Mac.
+**Dependent_Count** - How many dependents the customer
 
-1. From the top menu in VS Code, select **Terminal** > **New Terminal** to open the terminal.
+**Education Level**
 
-1. In the terminal, type `git clone` followed by the URL of your GitHub repository. Then hit **Enter**. This command will download all the files in your GitHub repository into your vscode-projects folder.
+**Marital Status**
 
-1. In VS Code, select **File** > **Open Folder** again.
+**Income Category**
 
-1. This time, navigate to and select the folder for the project you just downloaded. Then, click **Select Folder**.
+**Months On Book** - How long the customer has been using the credit card service
 
-1. A virtual environment is necessary when working with Python projects to ensure each project's dependencies are kept separate from each other. You need to create your virtual environment, also called a venv, and then ensure that it is activated any time you return to your workspace.
-Click the gear icon in the lower left-hand corner of the screen to open the Manage menu and select **Command Palette** to open the VS Code command palette.
+**Total Relationship Count** - Number of products the customer has with the bank (e.g., savings, loans, credit card).
 
-1. In the command palette, type: *create environment* and select **Python: Create Environment…**
+**Months Inactive 12 mon** - Number of months (in the last 12) where the customer had no activity.
 
-1. Choose **Venv** from the dropdown list.
+**Contacts Count 12 mon** - How many times the customer contacted the bank in the last 12 months
 
-1. Choose the Python version you installed earlier. Currently, we recommend Python 3.12.8
+**Credit Limit** - Maximum credit available on the card
 
-1. **DO NOT** click the box next to `requirements.txt`, as you need to do more steps before you can install your dependencies. Click **OK**.
+**Total Revolving Balance** - Amount the customer is carrying month‑to‑month (not paid off)
 
-1. You will see a `.venv` folder appear in the file explorer pane to show that the virtual environment has been created.
+**Avgerag Open To Buy** - Credit_Limit minus Total_Revolving_Bal. Essentially: how much credit they still have available.
 
-1. **Important**: Note that the `.venv` folder is in the `.gitignore` file so that Git won't track it.
+**Total_Amt_Chng_Q4_Q1** - Change in total transaction amount from Q1 to Q4. Measures spending trend (increasing or decreasing).
 
-1. Return to the terminal by clicking on the TERMINAL tab, or click on the **Terminal** menu and choose **New Terminal** if no terminal is currently open.
+**Total_Trans_Amt** - Total amount spent in the last 12 months
 
-1. In the terminal, use the command below to install your dependencies. This may take several minutes.
+**Total_Trans_Count** - Total number of transactions in the last 12 months
 
- ```console
- pip3 install -r requirements.txt
- ```
+**Total_Ct_Chng_Q4_Q1** - Change in transaction count from Q1 to Q4
 
-1. Open the `jupyter_notebooks` directory, and click on the notebook you want to open.
+# PowerBI Dashboard
+The link to the Stroke Predictions Dashboard can be found here
 
-1. Click the **kernel** button and choose **Python Environments**.
+# Project Plan
+Include a comprehensive project plan in the README, covering all phases of the project lifecycle. This could be presented as a Kanban board or a detailed list of tasks and milestones.
+# Hypothesis
 
-Note that the kernel says `Python 3.12.8` as it inherits from the venv, so it will be Python-3.12.8 if that is what is installed on your PC. To confirm this, you can use the command below in a notebook code cell.
+**H1. Relationship between months on the books and attrition**
+Customers who have been with the bank for a longer period (“months on book”) will be more likely to remain as existing customers. Longer time on the books typically reflects stronger loyalty, deeper familiarity with the institution, which should reduce the likelihood of attrition.
 
-```console
-! python --version
-```
+**H2. Relationship between credit limit and attrition** 
+Customers with higher credit limits will be less likely to attrit. Higher limits often indicate better credit scores and a more established relationship with the bank, which may increase satisfaction and reduce the incentive to leave.
 
-## Deployment Reminders
+**H3. Relationship between product holdings and attrition**
+Customers who hold multiple products with the bank (e.g., credit cards, savings accounts, loans) will be more likely to stay. Having several accounts increases dependency on the institution and raises the effort required to switch providers, thereby lowering attrition risk.
 
-* Set the `.python-version` Python version to a [Heroku-22](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version that closest matches what you used in this project.
-* The project can be deployed to Heroku using the following steps.
+**H4. Gender differences in attrition**
+There will be little to no difference in attrition rates between male and female customers. Gender is not expected to be a meaningful predictor of churn.
 
-1. Log in to Heroku and create an App
-2. At the **Deploy** tab, select **GitHub** as the deployment method.
-3. Select your repository name and click **Search**. Once it is found, click **Connect**.
-4. Select the branch you want to deploy, then click **Deploy Branch**.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button **Open App** at the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the `.slugignore` file.
+**H5. Relationship between age and attrition**
+Older customers will be more likely to remain as existing customers. Age is associated with greater financial stability and stronger long-term relationships with financial institutions, which may reduce the likelihood of switching banks.
+
+# Reflection
+
+**Data privacy and responsible handling**
+The dataset contains customer‑level financial information, which requires careful management even when used only for analytical purposes. To comply with GDPR and general data‑protection principles, all personally identifiable was removed unless it is strictly necessary for the analysis. Customer ID numbers were excluded from the dataset because they were not required for modelling and could potentially be used to re‑identify individuals. Removing this field aligns with the GDPR principle of data minimisation, which states that only essential data should be processed. The analysis therefore uses only anonymised, non‑identifiable attributes to ensure customer privacy is protected.
+
+**Bias and representativeness**
+Although the project focuses on understanding attrition behaviour rather than making decisions that directly affect customers, bias can still influence the insights produced. Therefor the ML Model would be considered low-risk, there is low societal impact and low risk of harm. If the model learns patterns that reflect historical inequalities or imbalances in the dataset, the resulting insights may be misleading. This is particularly relevant for a bank manager who may use the findings to invest in retention strategies  biased insights could lead to ineffective interventions or misallocation of resources.
+
+The dataset is imbalanced, with significantly more existing customers than attrited customers. This imbalance can cause the model to favour the majority class, reducing its ability to detect true attrition patterns. This is most likely one of the contributing factor to why the ML was overfiited to the test data. Ideally, additional data on attrited customers would be collected to improve representativeness. Prior to modelling, the dataset was cleaned and checked for inconsistencies, and demographic distributions were reviewed to ensure no obvious skew that could distort the analysis.
+
+**Fairness and potential impact**
+Although the model is not used to approve credit or make decisions that directly affect customers, fairness still matters. If demographic variables such as gender, age, or socioeconomic background were incorrectly interpreted as drivers of attrition, the bank could unintentionally target or overlook certain groups. This would not only be ethically problematic but also operationally inefficient.
+
+The analysis found that demographic variables had minimal predictive power, reducing the risk of demographic bias influencing conclusions
+
+# Challenges
+The most significant challenge in this project was the uneven distribution of attrited versus existing customers. The dataset contained far fewer attrited customers, which made it difficult for the machine‑learning model less accurate. The training and test sets may not have reflected the same imbalance, leading to the model becoming biased toward predicting the majority class, leading to inflated training performance and weaker generalisation on unseen data. This imbalance likely contributed to the overfitting observed in the model results, where training accuracy was extremely high but test performance dropped noticeably.
+
+Another challenge was the large number of features included in the dataset, many of which offered little value for predicting attrition. Several demographic variables showed minimal correlation with churn and added noise rather than insight and just extended the timeline of analysis
+
+
