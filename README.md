@@ -53,7 +53,11 @@ A List of the all the variables is listed below with an explaination of what the
 The link to the Stroke Predictions Dashboard can be found here
 
 # Project Plan
-Include a comprehensive project plan in the README, covering all phases of the project lifecycle. This could be presented as a Kanban board or a detailed list of tasks and milestones.
+* Load and Clean data: Removing outliers, encoding categorical data, identifying and dealing with missing or duplicated values
+* Condcut visualisations on data to identify relationships between the target and features
+* Conduct multiple Machine learning optimisation using Hyperparameter optimisation and Pipeline optimisation 
+* Construct a comprehensive and easy to follow PowerBI Dashboard to present the most relevant data
+
 # Hypothesis
 
 **H1. Relationship between months on the books and attrition**
